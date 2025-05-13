@@ -1,4 +1,4 @@
-﻿function createElement(tag, attributes, children, callbacks) {
+function createElement(tag, attributes, children, callbacks) {
   const element = document.createElement(tag);
 
   if (attributes) {
@@ -144,7 +144,7 @@ class TodoList extends Component {
   onAddTask() {
     if (this.state.inputValue.trim()) {
       this.state.tasks.push(
-        new Task(false, this.state.inputValue, () => this.onDeleteTask(this.state.tasks.length), task.saveState)
+        new Task(false, this.state.inputValue, () => this.onDeleteTask(this.state.tasks.length), this.saveState)
       );
       this.state.inputValue = "";
       this.update();
